@@ -9,3 +9,6 @@ CocoaSecurity include 4 classes, CocoaSecurity, CocoaSecurityResult, CocoaSecuri
 
 ###CocoaSecurity
 CocoaSecurity is core. It provides AES encrypt, AES decrypt, Hash(MD5, HmacMD5, SHA1~SHA512, HmacSHA1~HmacSHA512) messages.
+
+
+1
