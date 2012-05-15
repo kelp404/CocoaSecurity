@@ -26,8 +26,8 @@
 
 - (void)testEncodeDecode
 {
-    CocoaSecurityDecoder *decoder = [[[CocoaSecurityDecoder alloc] init] autorelease];
-    CocoaSecurityEncoder *encoder = [[[CocoaSecurityEncoder alloc] init] autorelease];
+    CocoaSecurityDecoder *decoder = [[CocoaSecurityDecoder alloc] init];
+    CocoaSecurityEncoder *encoder = [[CocoaSecurityEncoder alloc] init];
     
     // HEX
     STAssertEqualObjects([encoder hex:[decoder hex:@"CC0A69779E15780ADAE46C45EB451A23"] useLower:false],
@@ -39,8 +39,8 @@
 
 - (void)testAES
 {
-    CocoaSecurity *cs = [[[CocoaSecurity alloc] init] autorelease];
-    CocoaSecurityDecoder *decoder = [[[CocoaSecurityDecoder alloc] init] autorelease];
+    CocoaSecurity *cs = [[CocoaSecurity alloc] init];
+    CocoaSecurityDecoder *decoder = [[CocoaSecurityDecoder alloc] init];
     
     // AES128
     CocoaSecurityResult *aes128 = [cs aesEncryptWithData:[@"kelp" dataUsingEncoding:NSUTF8StringEncoding]
@@ -78,7 +78,7 @@
 
 - (void)testMD5
 {
-    CocoaSecurity *cs = [[[CocoaSecurity alloc] init] autorelease];
+    CocoaSecurity *cs = [[CocoaSecurity alloc] init];
     CocoaSecurityResult *md5Result = [cs md5:@"kelp"];
     CocoaSecurityResult *hmacMd5Result = [cs hmacMd5:@"kelp" hmacKey:@"key"];
     
@@ -93,7 +93,7 @@
 
 - (void)testSHA
 {
-    CocoaSecurity *cs = [[[CocoaSecurity alloc] init] autorelease];
+    CocoaSecurity *cs = [[CocoaSecurity alloc] init];
     CocoaSecurityResult *sha1Result = [cs sha1:@"kelp"];
     CocoaSecurityResult *sha224Result = [cs sha224:@"kelp"];
     CocoaSecurityResult *sha256Result = [cs sha256:@"kelp"];

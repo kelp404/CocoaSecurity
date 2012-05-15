@@ -3,6 +3,7 @@
 //
 //  Created by Kelp on 12/5/12.
 //  Copyright (c) 2012 Kelp http://kelp.phate.org/
+//  MIT License
 //
 
 #import "CocoaSecurity.h"
@@ -26,7 +27,9 @@
     CocoaSecurityDecoder *decoder = [[CocoaSecurityDecoder alloc] init];
     NSData *aesKey = [decoder hex:key];
     NSData *aesIv = [decoder hex:iv];
+#if !__has_feature(objc_arc)
     [decoder release];
+#endif
     
     return [self aesEncrypt:data key:aesKey iv:aesIv];
 }
@@ -64,9 +67,13 @@
                                           [data length],
                                           buffer,
                                           bufferSize,
-										  &encryptedSize);
+                                          &encryptedSize);
 	if (cryptStatus == kCCSuccess) {
+#if __has_feature(objc_arc)
+        CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:buffer length:encryptedSize];
+#else
         CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:buffer length:encryptedSize] autorelease];
+#endif
 		free(buffer);
         
         return result;
@@ -94,13 +101,19 @@
     CocoaSecurityDecoder *decoder = [[CocoaSecurityDecoder alloc] init];
     NSData *aesKey = [decoder hex:key];
     NSData *aesIv = [decoder hex:iv];
+#if !__has_feature(objc_arc)
     [decoder release];
+#endif
     
     return [self aesDecryptWithBase64:data key:aesKey iv:aesIv];
 }
 - (CocoaSecurityResult *)aesDecryptWithBase64:(NSString *)data key:(NSData *)key iv:(NSData *)iv
 {
+#if __has_feature(objc_arc)
+    CocoaSecurityDecoder *decoder = [[CocoaSecurityDecoder alloc] init];
+#else
     CocoaSecurityDecoder *decoder = [[[CocoaSecurityDecoder alloc] init] autorelease];
+#endif
     
     return [self aesDecryptWithData:[decoder base64:data] key:key iv:iv];
 }
@@ -134,9 +147,13 @@
                                           [data length],
                                           buffer,
                                           bufferSize,
-										  &encryptedSize);
+                                          &encryptedSize);
 	if (cryptStatus == kCCSuccess) {
+#if __has_feature(objc_arc)
+        CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:buffer length:encryptedSize];
+#else
         CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:buffer length:encryptedSize] autorelease];
+#endif
 		free(buffer);
         
         return result;
@@ -160,7 +177,11 @@
     digest = malloc(CC_MD5_DIGEST_LENGTH);
     
     CC_MD5([hashData bytes], [hashData length], digest);
+#if __has_feature(objc_arc)
+    CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_MD5_DIGEST_LENGTH];
+#else
     CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:digest length:CC_MD5_DIGEST_LENGTH] autorelease];
+#endif
     free(digest);
     
     return result;
@@ -177,7 +198,11 @@
     const char *cKey = [key cStringUsingEncoding:NSUTF8StringEncoding];
     
     CCHmac(kCCHmacAlgMD5, cKey, strlen(cKey), [hashData bytes], [hashData length], digest);
+#if __has_feature(objc_arc)
+    CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_MD5_DIGEST_LENGTH];
+#else
     CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:digest length:CC_MD5_DIGEST_LENGTH] autorelease];
+#endif
     free(digest);
     cKey = nil;
     
@@ -195,7 +220,11 @@
     digest = malloc(CC_SHA1_DIGEST_LENGTH);
     
     CC_SHA1([hashData bytes], [hashData length], digest);
+#if __has_feature(objc_arc)
+    CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA1_DIGEST_LENGTH];
+#else
     CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA1_DIGEST_LENGTH] autorelease];
+#endif
     free(digest);
     
     return result;
@@ -211,7 +240,11 @@
     digest = malloc(CC_SHA224_DIGEST_LENGTH);
     
     CC_SHA224([hashData bytes], [hashData length], digest);
+#if __has_feature(objc_arc)
+    CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA224_DIGEST_LENGTH];
+#else
     CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA224_DIGEST_LENGTH] autorelease];
+#endif
     free(digest);
     
     return result;
@@ -227,7 +260,11 @@
     digest = malloc(CC_SHA256_DIGEST_LENGTH);
     
     CC_SHA256([hashData bytes], [hashData length], digest);
+#if __has_feature(objc_arc)
+    CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA256_DIGEST_LENGTH];
+#else
     CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA256_DIGEST_LENGTH] autorelease];
+#endif
     free(digest);
     
     return result;
@@ -243,7 +280,11 @@
     digest = malloc(CC_SHA384_DIGEST_LENGTH);
     
     CC_SHA384([hashData bytes], [hashData length], digest);
+#if __has_feature(objc_arc)
+    CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA384_DIGEST_LENGTH];
+#else
     CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA384_DIGEST_LENGTH] autorelease];
+#endif
     free(digest);
     
     return result;
@@ -259,7 +300,11 @@
     digest = malloc(CC_SHA512_DIGEST_LENGTH);
     
     CC_SHA512([hashData bytes], [hashData length], digest);
+#if __has_feature(objc_arc)
+    CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA512_DIGEST_LENGTH];
+#else
     CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA512_DIGEST_LENGTH] autorelease];
+#endif
     free(digest);
     
     return result;
@@ -277,7 +322,11 @@
     const char *cKey = [key cStringUsingEncoding:NSUTF8StringEncoding];
     
     CCHmac(kCCHmacAlgSHA1, cKey, strlen(cKey), [hashData bytes], [hashData length], digest);
+#if __has_feature(objc_arc)
+    CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA1_DIGEST_LENGTH];
+#else
     CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA1_DIGEST_LENGTH] autorelease];
+#endif
     free(digest);
     cKey = nil;
     
@@ -295,7 +344,11 @@
     const char *cKey = [key cStringUsingEncoding:NSUTF8StringEncoding];
     
     CCHmac(kCCHmacAlgSHA224, cKey, strlen(cKey), [hashData bytes], [hashData length], digest);
+#if __has_feature(objc_arc)
+    CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA224_DIGEST_LENGTH];
+#else
     CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA224_DIGEST_LENGTH] autorelease];
+#endif
     free(digest);
     cKey = nil;
     
@@ -313,7 +366,11 @@
     const char *cKey = [key cStringUsingEncoding:NSUTF8StringEncoding];
     
     CCHmac(kCCHmacAlgSHA256, cKey, strlen(cKey), [hashData bytes], [hashData length], digest);
+#if __has_feature(objc_arc)
+    CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA256_DIGEST_LENGTH];
+#else
     CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA256_DIGEST_LENGTH] autorelease];
+#endif
     free(digest);
     cKey = nil;
     
@@ -331,7 +388,11 @@
     const char *cKey = [key cStringUsingEncoding:NSUTF8StringEncoding];
     
     CCHmac(kCCHmacAlgSHA384, cKey, strlen(cKey), [hashData bytes], [hashData length], digest);
+#if __has_feature(objc_arc)
+    CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA384_DIGEST_LENGTH];
+#else
     CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA384_DIGEST_LENGTH] autorelease];
+#endif
     free(digest);
     cKey = nil;
     
@@ -349,7 +410,11 @@
     const char *cKey = [key cStringUsingEncoding:NSUTF8StringEncoding];
     
     CCHmac(kCCHmacAlgSHA512, cKey, strlen(cKey), [hashData bytes], [hashData length], digest);
+#if __has_feature(objc_arc)
+    CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA512_DIGEST_LENGTH];
+#else
     CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA512_DIGEST_LENGTH] autorelease];
+#endif
     free(digest);
     cKey = nil;
     
@@ -376,7 +441,11 @@
 // convert CocoaSecurityResult to UTF8 string
 - (NSString *)utf8String
 {
+#if __has_feature(objc_arc)
+    NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+#else
     NSString *result = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+#endif
     
     return result;
 }
@@ -385,13 +454,21 @@
 // convert CocoaSecurityResult to HEX string
 - (NSString *)hex
 {
+#if __has_feature(objc_arc)
+    CocoaSecurityEncoder *encoder = [[CocoaSecurityEncoder alloc] init];
+#else
     CocoaSecurityEncoder *encoder = [[[CocoaSecurityEncoder alloc] init] autorelease];
+#endif
     
     return [encoder hex:data useLower:false];
 }
 - (NSString *)hexLower
 {
+#if __has_feature(objc_arc)
+    CocoaSecurityEncoder *encoder = [[CocoaSecurityEncoder alloc] init];
+#else
     CocoaSecurityEncoder *encoder = [[[CocoaSecurityEncoder alloc] init] autorelease];
+#endif
     
     return [encoder hex:data useLower:true];
 }
@@ -400,7 +477,11 @@
 // convert CocoaSecurityResult to Base64 string
 - (NSString *)base64
 {
+#if __has_feature(objc_arc)
+    CocoaSecurityEncoder *encoder = [[CocoaSecurityEncoder alloc] init];
+#else
     CocoaSecurityEncoder *encoder = [[[CocoaSecurityEncoder alloc] init] autorelease];
+#endif
     
     return [encoder base64:data];
 }
@@ -416,7 +497,11 @@
 {
     // base on GTMBase64
     NSString *result = [[NSString alloc] initWithData:[GTMBase64 encodeData:data] encoding:NSUTF8StringEncoding];
+#if __has_feature(objc_arc)
+    return result;
+#else
     return [result autorelease];
+#endif
 }
 
 // convert NSData to hex string
@@ -464,7 +549,11 @@
 {
     // base on GTMBase64
     NSData *result = [[NSData alloc] initWithData:[GTMBase64 decodeString:data]];
+#if __has_feature(objc_arc)
+    return result;
+#else
     return [result autorelease];
+#endif
 }
 
 - (NSData *)hex: (NSString *)data

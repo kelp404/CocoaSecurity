@@ -1,4 +1,4 @@
-##CocoaSecurity 1.0
+#CocoaSecurity 1.0.1
 
 Kelp http://kelp.phate.org/ <br/>
 MIT License <br/>
@@ -7,7 +7,7 @@ Apache Licence 2.0: GTMBase64 by Google Inc.
 
 CocoaSecurity include 4 classes, **CocoaSecurity**, **CocoaSecurityResult**, **CocoaSecurityEncoder** and **CocoaSecurityDecoder**.
 
-###CocoaSecurity
+##CocoaSecurity
 CocoaSecurity is core. It provides AES encrypt, AES decrypt, Hash(MD5, HmacMD5, SHA1~SHA512, HmacSHA1~HmacSHA512) messages.
 <br/><br/>
 **MD5:**
@@ -52,7 +52,7 @@ CocoaSecurityResult *aes256Decrypt = [cs aesDecryptWithBase64:@"WQYg5qvcGyCBY3IF
 ```
 
 
-###CocoaSecurityResult
+##CocoaSecurityResult
 CocoaSecurityResult is the result class of CocoaSecurity. It provides convert result data to NSData, NSString, HEX string, Base64 string.
 
 ```objective-c
@@ -64,7 +64,7 @@ CocoaSecurityResult is the result class of CocoaSecurity. It provides convert re
 ```
 
 
-###CocoaSecurityEncoder
+##CocoaSecurityEncoder
 CocoaSecurityEncoder provides convert NSData to HEX string, Base64 string.
 
 ```objective-c
@@ -80,7 +80,7 @@ NSString *str2 = [encoder base64:[@"kelp" dataUsingEncoding:NSUTF8StringEncoding
 // str2 = 'a2VscA=='
 ```
 
-###CocoaSecurityDecoder
+##CocoaSecurityDecoder
 CocoaSecurityEncoder provides convert HEX string or Base64 string to NSData.
 
 ```objective-c

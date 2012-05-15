@@ -1,9 +1,16 @@
-//
-//  CocoaSecurity.h
-//
-//  Created by Kelp on 12/5/12.
-//  Copyright (c) 2012 Kelp http://kelp.phate.org/
-//
+/*
+ CocoaSecurity  1.0.1
+
+ Created by Kelp on 12/5/12.
+ Copyright (c) 2012 Kelp http://kelp.phate.org/
+ MIT License
+ 
+ CocoaSecurity is core. It provides AES encrypt, AES decrypt, Hash(MD5, HmacMD5, SHA1~SHA512, HmacSHA1~HmacSHA512) messages.
+ 
+ 1.0.1  2012-05-15
+    update ARC version
+ 
+*/
 
 #import <Foundation/Foundation.h>
 #import <Foundation/NSException.h>
