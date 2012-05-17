@@ -74,10 +74,10 @@
 #else
         CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:buffer length:encryptedSize] autorelease];
 #endif
-		free(buffer);
+        free(buffer);
         
         return result;
-	}
+    }
     else {
         free(buffer);
         @throw [NSException exceptionWithName:@"Cocoa Security"
@@ -155,10 +155,10 @@
 #else
         CocoaSecurityResult *result = [[[CocoaSecurityResult alloc] initWithBytes:buffer length:encryptedSize] autorelease];
 #endif
-		free(buffer);
+        free(buffer);
         
         return result;
-	}
+    }
     else {
         free(buffer);
         @throw [NSException exceptionWithName:@"Cocoa Security"
