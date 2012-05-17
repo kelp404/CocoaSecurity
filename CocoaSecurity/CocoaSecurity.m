@@ -77,7 +77,8 @@
 		free(buffer);
         
         return result;
-	} else {
+	}
+    else {
         free(buffer);
         @throw [NSException exceptionWithName:@"Cocoa Security"
                                        reason:@"Encrypt Error!"
@@ -85,7 +86,7 @@
         return nil;
     }
 }
-#pragma mark AES Decrypt 128, 192, 256
+#pragma mark - AES Decrypt
 // default AES Decrypt, key -> SHA384(key).sub(0, 32), iv -> SHA384(key).sub(32, 16)
 - (CocoaSecurityResult *)aesDecryptWithBase64:(NSString *)data key:(NSString *)key
 {
@@ -95,7 +96,7 @@
     
     return [self aesDecryptWithBase64:data key:aesKey iv:aesIv];
 }
-#pragma mark AES Encrypt 128, 192, 256
+#pragma mark AES Decrypt 128, 192, 256
 - (CocoaSecurityResult *)aesDecryptWithBase64:(NSString *)data hexKey:(NSString *)key hexIv:(NSString *)iv
 {
     CocoaSecurityDecoder *decoder = [[CocoaSecurityDecoder alloc] init];
@@ -157,7 +158,8 @@
 		free(buffer);
         
         return result;
-	} else {
+	}
+    else {
         free(buffer);
         @throw [NSException exceptionWithName:@"Cocoa Security"
                                        reason:@"Decrypt Error!"
