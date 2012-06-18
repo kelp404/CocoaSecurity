@@ -19,12 +19,22 @@
 #import <CommonCrypto/CommonCryptor.h>
 
 #pragma mark - CocoaSecurityResult
+
 @interface CocoaSecurityResult : NSObject
+
+#if __has_feature(objc_arc)
+@property (strong) NSData *data;
+@property (strong, readonly) NSString *utf8String;
+@property (strong, readonly) NSString *hex;
+@property (strong, readonly) NSString *hexLower;
+@property (strong, readonly) NSString *base64;
+#else
 @property (retain) NSData *data;
 @property (retain, readonly) NSString *utf8String;
 @property (retain, readonly) NSString *hex;
 @property (retain, readonly) NSString *hexLower;
 @property (retain, readonly) NSString *base64;
+#endif
 
 - (id)initWithBytes: (unsigned char[])initData length: (uint) length;
 @end
