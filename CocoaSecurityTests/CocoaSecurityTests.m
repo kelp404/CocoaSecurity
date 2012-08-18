@@ -3,7 +3,7 @@
 //  CocoaSecurityTests
 //
 //  Created by Kelp on 12/5/13.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Phate. All rights reserved.
 //
 
 #import "CocoaSecurityTests.h"
@@ -39,7 +39,7 @@
 
 - (void)testAES
 {
-    CocoaSecurity *cs = [[CocoaSecurity alloc] init];
+    CocoaSecurity *cs = [CocoaSecurity sharedInstance];
     CocoaSecurityDecoder *decoder = [[CocoaSecurityDecoder alloc] init];
     
     // AES128
@@ -78,7 +78,7 @@
 
 - (void)testMD5
 {
-    CocoaSecurity *cs = [[CocoaSecurity alloc] init];
+    CocoaSecurity *cs = [CocoaSecurity sharedInstance];
     CocoaSecurityResult *md5Result = [cs md5:@"kelp"];
     CocoaSecurityResult *hmacMd5Result = [cs hmacMd5:@"kelp" hmacKey:@"key"];
     
@@ -93,7 +93,7 @@
 
 - (void)testSHA
 {
-    CocoaSecurity *cs = [[CocoaSecurity alloc] init];
+    CocoaSecurity *cs = [CocoaSecurity sharedInstance];
     CocoaSecurityResult *sha1Result = [cs sha1:@"kelp"];
     CocoaSecurityResult *sha224Result = [cs sha224:@"kelp"];
     CocoaSecurityResult *sha256Result = [cs sha256:@"kelp"];

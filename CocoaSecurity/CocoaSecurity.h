@@ -42,6 +42,9 @@
 
 #pragma mark - CocoaSecurity
 @interface CocoaSecurity : NSObject
+#pragma mark - Init
++ (id)sharedInstance;
+
 #pragma mark - AES Encrypt
 - (CocoaSecurityResult *)aesEncrypt:(NSString *)data key:(NSString *)key;
 - (CocoaSecurityResult *)aesEncrypt:(NSString *)data hexKey:(NSString *)key hexIv:(NSString *)iv;

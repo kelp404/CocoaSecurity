@@ -11,6 +11,17 @@
 #pragma mark - CocoaSecurity
 @implementation CocoaSecurity
 
+static CocoaSecurity *_instance = nil;
+
+#pragma mark - Init
++ (id)sharedInstance
+{
+    if (_instance == nil) {
+        _instance = [self new];
+    }
+    return _instance;
+}
+
 #pragma mark - AES Encrypt
 // default AES Encrypt, key -> SHA384(key).sub(0, 32), iv -> SHA384(key).sub(32, 16)
 - (CocoaSecurityResult *)aesEncrypt:(NSString *)data key:(NSString *)key
