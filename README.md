@@ -1,8 +1,8 @@
 #CocoaSecurity 1.0.1
 
 Kelp http://kelp.phate.org/ <br/>
-[MIT]: http://www.opensource.org/licenses/mit-license.php <br/>
-[Apache]: http://www.apache.org/licenses/LICENSE-2.0 : GTMBase64 by Google Inc.
+[MIT License][mit] <br/>
+[Apache License, Version 2.0][Apache] : GTMBase64 by Google Inc.
 
 
 CocoaSecurity include 4 classes, **CocoaSecurity**, **CocoaSecurityResult**, **CocoaSecurityEncoder** and **CocoaSecurityDecoder**.
@@ -96,3 +96,5 @@ NSData *data2 = [decoder base64:@"zT1PS64MnXIUDCUiy13RRg=="];
 // data2 = <cd3d4f4b ae0c9d72 140c2522 cb5dd146>
 ```
 
+[Apache]: http://www.apache.org/licenses/LICENSE-2.0
+[MIT]: http://www.opensource.org/licenses/mit-license.php
