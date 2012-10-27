@@ -1,8 +1,8 @@
 #CocoaSecurity 1.0.1
 
 Kelp http://kelp.phate.org/ <br/>
-MIT License <br/>
-Apache Licence 2.0: GTMBase64 by Google Inc.
+[MIT]: http://www.opensource.org/licenses/mit-license.php <br/>
+[Apache]: http://www.apache.org/licenses/LICENSE-2.0 : GTMBase64 by Google Inc.
 
 
 CocoaSecurity include 4 classes, **CocoaSecurity**, **CocoaSecurityResult**, **CocoaSecurityEncoder** and **CocoaSecurityDecoder**.
