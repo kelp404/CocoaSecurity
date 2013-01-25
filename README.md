@@ -94,5 +94,5 @@ NSData *data2 = [decoder base64:@"zT1PS64MnXIUDCUiy13RRg=="];
 ```
 
 ##History
-1.1 Only for ARC project.
+1.1 Only for ARC project.  
 1.0.1 The last version support disable ARC.
