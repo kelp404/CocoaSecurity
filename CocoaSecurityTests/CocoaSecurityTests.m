@@ -26,8 +26,8 @@
 
 - (void)testEncodeDecode
 {
-    CocoaSecurityDecoder *decoder = [[CocoaSecurityDecoder alloc] init];
-    CocoaSecurityEncoder *encoder = [[CocoaSecurityEncoder alloc] init];
+    CocoaSecurityDecoder *decoder = [CocoaSecurityDecoder new];
+    CocoaSecurityEncoder *encoder = [CocoaSecurityEncoder new];
     
     // HEX
     STAssertEqualObjects([encoder hex:[decoder hex:@"CC0A69779E15780ADAE46C45EB451A23"] useLower:false],

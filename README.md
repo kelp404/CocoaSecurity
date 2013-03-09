@@ -2,8 +2,6 @@
 
 Kelp http://kelp.phate.org/  
 [MIT License][mit]  
-[Apache License, Version 2.0][Apache] : GTMBase64 by Google Inc.
-[Apache]: http://www.apache.org/licenses/LICENSE-2.0
 [MIT]: http://www.opensource.org/licenses/mit-license.php
 
 
@@ -66,7 +64,7 @@ CocoaSecurityEncoder provides convert NSData to HEX string, Base64 string.
 
 ```objective-c
 - (NSString *)base64:(NSData *)data;
-- (NSString *)hex:(NSData *)data useLower:(bool)isOutputLower;
+- (NSString *)hex:(NSData *)data useLower:(BOOL)isOutputLower;
 ```
 **example:**
 ```objective-c
@@ -92,7 +90,3 @@ NSData *data1 = [decoder hex:@"CC0A69779E15780ADAE46C45EB451A23"];
 NSData *data2 = [decoder base64:@"zT1PS64MnXIUDCUiy13RRg=="];
 // data2 = <cd3d4f4b ae0c9d72 140c2522 cb5dd146>
 ```
-
-##History
-1.1 Only for ARC project.  
-1.0.1 The last version support disable ARC.

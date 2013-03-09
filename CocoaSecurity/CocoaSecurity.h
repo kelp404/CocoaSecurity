@@ -10,9 +10,6 @@
 
 #import <Foundation/Foundation.h>
 #import <Foundation/NSException.h>
-#import "CocoaSecurity-GTMBase64.h"
-#import <CommonCrypto/CommonHMAC.h>
-#import <CommonCrypto/CommonCryptor.h>
 
 
 #pragma mark - CocoaSecurityResult
@@ -109,7 +106,7 @@
 #pragma mark - CocoaSecurityEncoder
 @interface CocoaSecurityEncoder : NSObject
 - (NSString *)base64:(NSData *)data;
-- (NSString *)hex:(NSData *)data useLower:(bool)isOutputLower;
+- (NSString *)hex:(NSData *)data useLower:(BOOL)isOutputLower;
 @end
 
 
