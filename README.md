@@ -90,3 +90,20 @@ NSData *data1 = [decoder hex:@"CC0A69779E15780ADAE46C45EB451A23"];
 NSData *data2 = [decoder base64:@"zT1PS64MnXIUDCUiy13RRg=="];
 // data2 = <cd3d4f4b ae0c9d72 140c2522 cb5dd146>
 ```
+
+
+##Installation
+1. **git:**
+```
+$ git clone git://github.com/kelp404/CocoaSecurity.git
+```
+
+2. **<a href="http://cocoapods.org/?q=CocoaSecurity" target="_blank">CocoadPods</a>:**  
+add `Podfile` in your project path
+```
+platform :ios
+pod 'CocoaSecurity'
+```
+```
+$ pod install
+```
