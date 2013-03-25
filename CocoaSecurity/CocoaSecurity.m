@@ -581,7 +581,7 @@
 {
     static const char lookup[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
     
-    NSUInteger inputLength = [data length];
+    long long inputLength = [data length];
     const unsigned char *inputBytes = [data bytes];
     
     long long maxOutputLength = (inputLength / 3 + 1) * 4;
@@ -604,7 +604,7 @@
         outputBytes[outputLength++] = lookup[(inputBytes[index] & 0xFC) >> 2];
         outputBytes[outputLength++] = lookup[((inputBytes[index] & 0x03) << 4) | ((inputBytes[index + 1] & 0xF0) >> 4)];
         outputBytes[outputLength++] = lookup[(inputBytes[index + 1] & 0x0F) << 2];
-        outputBytes[outputLength++] =   '=';
+        outputBytes[outputLength++] = '=';
     }
     else if (index == inputLength - 1)
     {
@@ -629,8 +629,10 @@
 // convert NSData to hex string
 - (NSString *)hex:(NSData *)data useLower:(BOOL)isOutputLower
 {
-    static const char HexEncodeCharsLower[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
-    static const char HexEncodeChars[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+    if (data.length == 0) { return nil; }
+    
+    static const char HexEncodeCharsLower[] = "0123456789abcdef";
+    static const char HexEncodeChars[] = "0123456789ABCDEF";
     char *resultData;
     // malloc result data
     resultData = malloc([data length] * 2 +1);
@@ -717,6 +719,8 @@
 }
 - (NSData *)hex:(NSString *)data
 {
+    if (data.length == 0) { return nil; }
+    
     static const unsigned char HexDecodeChars[] = 
     {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

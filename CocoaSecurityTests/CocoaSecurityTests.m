@@ -32,9 +32,13 @@
     // HEX
     STAssertEqualObjects([encoder hex:[decoder hex:@"CC0A69779E15780ADAE46C45EB451A23"] useLower:false],
                          @"CC0A69779E15780ADAE46C45EB451A23", nil);
+    STAssertNil([encoder hex:[NSData new] useLower:YES], nil);
+    STAssertNil([decoder hex:@""], nil);
     
     // Base64
     STAssertEqualObjects([encoder base64:[decoder base64:@"zT1PS64MnXIUDCUiy13RRg=="]], @"zT1PS64MnXIUDCUiy13RRg==", nil);
+    STAssertNil([encoder base64:[NSData new]], nil);
+    STAssertNil([decoder base64:@""], nil);
 }
 
 - (void)testAES
