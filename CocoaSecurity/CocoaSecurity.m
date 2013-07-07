@@ -213,7 +213,7 @@
     unsigned char *digest;
     digest = malloc(CC_MD5_DIGEST_LENGTH);
     
-    CC_MD5([hashData bytes], [hashData length], digest);
+    CC_MD5([hashData bytes], (CC_LONG)[hashData length], digest);
     CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_MD5_DIGEST_LENGTH];
     free(digest);
     
@@ -269,7 +269,7 @@
     unsigned char *digest;
     digest = malloc(CC_SHA1_DIGEST_LENGTH);
     
-    CC_SHA1([hashData bytes], [hashData length], digest);
+    CC_SHA1([hashData bytes], (CC_LONG)[hashData length], digest);
     CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA1_DIGEST_LENGTH];
     free(digest);
     
@@ -295,7 +295,7 @@
     unsigned char *digest;
     digest = malloc(CC_SHA224_DIGEST_LENGTH);
     
-    CC_SHA224([hashData bytes], [hashData length], digest);
+    CC_SHA224([hashData bytes], (CC_LONG)[hashData length], digest);
     CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA224_DIGEST_LENGTH];
     free(digest);
     
@@ -321,7 +321,7 @@
     unsigned char *digest;
     digest = malloc(CC_SHA256_DIGEST_LENGTH);
     
-    CC_SHA256([hashData bytes], [hashData length], digest);
+    CC_SHA256([hashData bytes], (CC_LONG)[hashData length], digest);
     CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA256_DIGEST_LENGTH];
     free(digest);
     
@@ -347,7 +347,7 @@
     unsigned char *digest;
     digest = malloc(CC_SHA384_DIGEST_LENGTH);
     
-    CC_SHA384([hashData bytes], [hashData length], digest);
+    CC_SHA384([hashData bytes], (CC_LONG)[hashData length], digest);
     CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA384_DIGEST_LENGTH];
     free(digest);
     
@@ -373,7 +373,7 @@
     unsigned char *digest;
     digest = malloc(CC_SHA512_DIGEST_LENGTH);
     
-    CC_SHA512([hashData bytes], [hashData length], digest);
+    CC_SHA512([hashData bytes], (CC_LONG)[hashData length], digest);
     CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:digest length:CC_SHA512_DIGEST_LENGTH];
     free(digest);
     
