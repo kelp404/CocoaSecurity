@@ -1,0 +1,20 @@
+# xcode noise
+build
+*.pbxuser
+*.perspectivev3
+*.mode1v3
+*.xcuserstate
+xcuserdata
+
+# old skool
+.svn
+.cvs
+
+# Python
+*.pyc
+
+# PyCharm
+.idea
+
+# osx noise
+.DS_Store
