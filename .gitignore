@@ -5,6 +5,7 @@ build
 *.mode1v3
 *.xcuserstate
 xcuserdata
+*.xccheckout
 
 # old skool
 .svn

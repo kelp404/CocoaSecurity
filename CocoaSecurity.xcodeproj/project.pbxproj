@@ -10,16 +10,18 @@
 		2113923B16EAD6AF00AFDF87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2113923A16EAD6AF00AFDF87 /* Foundation.framework */; };
 		2113924016EAD6AF00AFDF87 /* CocoaSecurity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2113923F16EAD6AF00AFDF87 /* CocoaSecurity.h */; };
 		2113924216EAD6AF00AFDF87 /* CocoaSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2113924116EAD6AF00AFDF87 /* CocoaSecurity.m */; };
-		2113924A16EAD6AF00AFDF87 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2113924916EAD6AF00AFDF87 /* SenTestingKit.framework */; };
-		2113924C16EAD6AF00AFDF87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2113924B16EAD6AF00AFDF87 /* UIKit.framework */; };
-		2113924D16EAD6AF00AFDF87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2113923A16EAD6AF00AFDF87 /* Foundation.framework */; };
-		2113925016EAD6AF00AFDF87 /* libCocoaSecurity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2113923716EAD6AF00AFDF87 /* libCocoaSecurity.a */; };
-		2113925616EAD6AF00AFDF87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2113925416EAD6AF00AFDF87 /* InfoPlist.strings */; };
-		2113925916EAD6AF00AFDF87 /* CocoaSecurityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2113925816EAD6AF00AFDF87 /* CocoaSecurityTests.m */; };
+		2164336617FEB509006C71F4 /* CocoaSecurityDecoder_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164336517FEB509006C71F4 /* CocoaSecurityDecoder_Tests.m */; };
+		2164336817FEB8B0006C71F4 /* CocoaSecurityResult_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164336717FEB8B0006C71F4 /* CocoaSecurityResult_Test.m */; };
+		21BB8A2F17FEA0EC0032C38C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21BB8A2E17FEA0EC0032C38C /* XCTest.framework */; };
+		21BB8A3017FEA0EC0032C38C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2113923A16EAD6AF00AFDF87 /* Foundation.framework */; };
+		21BB8A3717FEA0EC0032C38C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21BB8A3517FEA0EC0032C38C /* InfoPlist.strings */; };
+		21BB8A3917FEA0EC0032C38C /* CocoaSecurity_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BB8A3817FEA0EC0032C38C /* CocoaSecurity_Tests.m */; };
+		21BB8A4017FEA5190032C38C /* CocoaSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2113924116EAD6AF00AFDF87 /* CocoaSecurity.m */; };
+		21BB8A4317FEB3ED0032C38C /* CocoaSecurityEncoder_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BB8A4217FEB3ED0032C38C /* CocoaSecurityEncoder_Tests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2113924E16EAD6AF00AFDF87 /* PBXContainerItemProxy */ = {
+		21BB8A3B17FEA0EC0032C38C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2113922F16EAD6AF00AFDF87 /* Project object */;
 			proxyType = 1;
@@ -46,13 +48,17 @@
 		2113923A16EAD6AF00AFDF87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2113923F16EAD6AF00AFDF87 /* CocoaSecurity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaSecurity.h; sourceTree = "<group>"; };
 		2113924116EAD6AF00AFDF87 /* CocoaSecurity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaSecurity.m; sourceTree = "<group>"; };
-		2113924816EAD6AF00AFDF87 /* CocoaSecurityTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaSecurityTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2113924916EAD6AF00AFDF87 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		2113924B16EAD6AF00AFDF87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		2113925316EAD6AF00AFDF87 /* CocoaSecurityTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaSecurityTests-Info.plist"; sourceTree = "<group>"; };
-		2113925516EAD6AF00AFDF87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2113925716EAD6AF00AFDF87 /* CocoaSecurityTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocoaSecurityTests.h; sourceTree = "<group>"; };
-		2113925816EAD6AF00AFDF87 /* CocoaSecurityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaSecurityTests.m; sourceTree = "<group>"; };
+		2164336517FEB509006C71F4 /* CocoaSecurityDecoder_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaSecurityDecoder_Tests.m; sourceTree = "<group>"; };
+		2164336717FEB8B0006C71F4 /* CocoaSecurityResult_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaSecurityResult_Test.m; sourceTree = "<group>"; };
+		21BB8A2D17FEA0EC0032C38C /* CocoaSecurity Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CocoaSecurity Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21BB8A2E17FEA0EC0032C38C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		21BB8A3417FEA0EC0032C38C /* CocoaSecurity Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaSecurity Tests-Info.plist"; sourceTree = "<group>"; };
+		21BB8A3617FEA0EC0032C38C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		21BB8A3817FEA0EC0032C38C /* CocoaSecurity_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaSecurity_Tests.m; sourceTree = "<group>"; };
+		21BB8A3A17FEA0EC0032C38C /* CocoaSecurity Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaSecurity Tests-Prefix.pch"; sourceTree = "<group>"; };
+		21BB8A4217FEB3ED0032C38C /* CocoaSecurityEncoder_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaSecurityEncoder_Tests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +70,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2113924416EAD6AF00AFDF87 /* Frameworks */ = {
+		21BB8A2A17FEA0EC0032C38C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2113924A16EAD6AF00AFDF87 /* SenTestingKit.framework in Frameworks */,
-				2113924C16EAD6AF00AFDF87 /* UIKit.framework in Frameworks */,
-				2113924D16EAD6AF00AFDF87 /* Foundation.framework in Frameworks */,
-				2113925016EAD6AF00AFDF87 /* libCocoaSecurity.a in Frameworks */,
+				21BB8A2F17FEA0EC0032C38C /* XCTest.framework in Frameworks */,
+				21BB8A3017FEA0EC0032C38C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				2113923C16EAD6AF00AFDF87 /* CocoaSecurity */,
-				2113925116EAD6AF00AFDF87 /* CocoaSecurityTests */,
+				21BB8A3217FEA0EC0032C38C /* CocoaSecurity Tests */,
 				2113923916EAD6AF00AFDF87 /* Frameworks */,
 				2113923816EAD6AF00AFDF87 /* Products */,
 			);
@@ -92,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				2113923716EAD6AF00AFDF87 /* libCocoaSecurity.a */,
-				2113924816EAD6AF00AFDF87 /* CocoaSecurityTests.octest */,
+				21BB8A2D17FEA0EC0032C38C /* CocoaSecurity Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +107,7 @@
 				2113923A16EAD6AF00AFDF87 /* Foundation.framework */,
 				2113924916EAD6AF00AFDF87 /* SenTestingKit.framework */,
 				2113924B16EAD6AF00AFDF87 /* UIKit.framework */,
+				21BB8A2E17FEA0EC0032C38C /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,21 +121,24 @@
 			path = CocoaSecurity;
 			sourceTree = "<group>";
 		};
-		2113925116EAD6AF00AFDF87 /* CocoaSecurityTests */ = {
+		21BB8A3217FEA0EC0032C38C /* CocoaSecurity Tests */ = {
 			isa = PBXGroup;
 			children = (
-				2113925716EAD6AF00AFDF87 /* CocoaSecurityTests.h */,
-				2113925816EAD6AF00AFDF87 /* CocoaSecurityTests.m */,
-				2113925216EAD6AF00AFDF87 /* Supporting Files */,
+				21BB8A3817FEA0EC0032C38C /* CocoaSecurity_Tests.m */,
+				21BB8A4217FEB3ED0032C38C /* CocoaSecurityEncoder_Tests.m */,
+				2164336517FEB509006C71F4 /* CocoaSecurityDecoder_Tests.m */,
+				2164336717FEB8B0006C71F4 /* CocoaSecurityResult_Test.m */,
+				21BB8A3317FEA0EC0032C38C /* Supporting Files */,
 			);
-			path = CocoaSecurityTests;
+			path = "CocoaSecurity Tests";
 			sourceTree = "<group>";
 		};
-		2113925216EAD6AF00AFDF87 /* Supporting Files */ = {
+		21BB8A3317FEA0EC0032C38C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2113925316EAD6AF00AFDF87 /* CocoaSecurityTests-Info.plist */,
-				2113925416EAD6AF00AFDF87 /* InfoPlist.strings */,
+				21BB8A3417FEA0EC0032C38C /* CocoaSecurity Tests-Info.plist */,
+				21BB8A3517FEA0EC0032C38C /* InfoPlist.strings */,
+				21BB8A3A17FEA0EC0032C38C /* CocoaSecurity Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -155,24 +163,23 @@
 			productReference = 2113923716EAD6AF00AFDF87 /* libCocoaSecurity.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		2113924716EAD6AF00AFDF87 /* CocoaSecurityTests */ = {
+		21BB8A2C17FEA0EC0032C38C /* CocoaSecurity Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2113925F16EAD6AF00AFDF87 /* Build configuration list for PBXNativeTarget "CocoaSecurityTests" */;
+			buildConfigurationList = 21BB8A3D17FEA0EC0032C38C /* Build configuration list for PBXNativeTarget "CocoaSecurity Tests" */;
 			buildPhases = (
-				2113924316EAD6AF00AFDF87 /* Sources */,
-				2113924416EAD6AF00AFDF87 /* Frameworks */,
-				2113924516EAD6AF00AFDF87 /* Resources */,
-				2113924616EAD6AF00AFDF87 /* ShellScript */,
+				21BB8A2917FEA0EC0032C38C /* Sources */,
+				21BB8A2A17FEA0EC0032C38C /* Frameworks */,
+				21BB8A2B17FEA0EC0032C38C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2113924F16EAD6AF00AFDF87 /* PBXTargetDependency */,
+				21BB8A3C17FEA0EC0032C38C /* PBXTargetDependency */,
 			);
-			name = CocoaSecurityTests;
-			productName = CocoaSecurityTests;
-			productReference = 2113924816EAD6AF00AFDF87 /* CocoaSecurityTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			name = "CocoaSecurity Tests";
+			productName = "CocoaSecurity Tests";
+			productReference = 21BB8A2D17FEA0EC0032C38C /* CocoaSecurity Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -181,6 +188,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
+				TargetAttributes = {
+					21BB8A2C17FEA0EC0032C38C = {
+						TestTargetID = 2113923616EAD6AF00AFDF87;
+					};
+				};
 			};
 			buildConfigurationList = 2113923216EAD6AF00AFDF87 /* Build configuration list for PBXProject "CocoaSecurity" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -195,37 +207,21 @@
 			projectRoot = "";
 			targets = (
 				2113923616EAD6AF00AFDF87 /* CocoaSecurity */,
-				2113924716EAD6AF00AFDF87 /* CocoaSecurityTests */,
+				21BB8A2C17FEA0EC0032C38C /* CocoaSecurity Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2113924516EAD6AF00AFDF87 /* Resources */ = {
+		21BB8A2B17FEA0EC0032C38C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2113925616EAD6AF00AFDF87 /* InfoPlist.strings in Resources */,
+				21BB8A3717FEA0EC0032C38C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2113924616EAD6AF00AFDF87 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2113923316EAD6AF00AFDF87 /* Sources */ = {
@@ -236,29 +232,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2113924316EAD6AF00AFDF87 /* Sources */ = {
+		21BB8A2917FEA0EC0032C38C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2113925916EAD6AF00AFDF87 /* CocoaSecurityTests.m in Sources */,
+				2164336617FEB509006C71F4 /* CocoaSecurityDecoder_Tests.m in Sources */,
+				21BB8A4017FEA5190032C38C /* CocoaSecurity.m in Sources */,
+				21BB8A3917FEA0EC0032C38C /* CocoaSecurity_Tests.m in Sources */,
+				21BB8A4317FEB3ED0032C38C /* CocoaSecurityEncoder_Tests.m in Sources */,
+				2164336817FEB8B0006C71F4 /* CocoaSecurityResult_Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2113924F16EAD6AF00AFDF87 /* PBXTargetDependency */ = {
+		21BB8A3C17FEA0EC0032C38C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2113923616EAD6AF00AFDF87 /* CocoaSecurity */;
-			targetProxy = 2113924E16EAD6AF00AFDF87 /* PBXContainerItemProxy */;
+			targetProxy = 21BB8A3B17FEA0EC0032C38C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2113925416EAD6AF00AFDF87 /* InfoPlist.strings */ = {
+		21BB8A3517FEA0EC0032C38C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2113925516EAD6AF00AFDF87 /* en */,
+				21BB8A3617FEA0EC0032C38C /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -343,33 +343,60 @@
 			};
 			name = Release;
 		};
-		2113926016EAD6AF00AFDF87 /* Debug */ = {
+		21BB8A3E17FEA0EC0032C38C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "CocoaSecurityTests/CocoaSecurityTests-Info.plist";
+				GCC_PREFIX_HEADER = "CocoaSecurity Tests/CocoaSecurity Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "CocoaSecurity Tests/CocoaSecurity Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		2113926116EAD6AF00AFDF87 /* Release */ = {
+		21BB8A3F17FEA0EC0032C38C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "CocoaSecurityTests/CocoaSecurityTests-Info.plist";
+				GCC_PREFIX_HEADER = "CocoaSecurity Tests/CocoaSecurity Tests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "CocoaSecurity Tests/CocoaSecurity Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -394,11 +421,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2113925F16EAD6AF00AFDF87 /* Build configuration list for PBXNativeTarget "CocoaSecurityTests" */ = {
+		21BB8A3D17FEA0EC0032C38C /* Build configuration list for PBXNativeTarget "CocoaSecurity Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2113926016EAD6AF00AFDF87 /* Debug */,
-				2113926116EAD6AF00AFDF87 /* Release */,
+				21BB8A3E17FEA0EC0032C38C /* Debug */,
+				21BB8A3F17FEA0EC0032C38C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
