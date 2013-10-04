@@ -585,7 +585,7 @@
     const unsigned char *inputBytes = [data bytes];
     
     long long maxOutputLength = (inputLength / 3 + 1) * 4;
-    unsigned char *outputBytes = (unsigned char *)malloc(maxOutputLength);
+    unsigned char *outputBytes = (unsigned char *)malloc((unsigned long)maxOutputLength);
     
     long long index;
     long long outputLength = 0;
@@ -619,8 +619,8 @@
     if (outputLength >= 4)
     {
         //truncate data to match actual output length
-        outputBytes = realloc(outputBytes, outputLength);
-        result = [[NSString alloc] initWithBytes:outputBytes length:outputLength encoding:NSASCIIStringEncoding];
+        outputBytes = realloc(outputBytes, (unsigned long)outputLength);
+        result = [[NSString alloc] initWithBytes:outputBytes length:(unsigned long)outputLength encoding:NSASCIIStringEncoding];
     }
     free(outputBytes);
     return result;
