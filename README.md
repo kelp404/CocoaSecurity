@@ -1,4 +1,4 @@
-#CocoaSecurity
+#CocoaSecurity [![Build Status](https://secure.travis-ci.org/kelp404/CocoaSecurity.png?branch=master)](http://travis-ci.org/#!/kelp404/CocoaSecurity)
 
 Kelp https://twitter.com/kelp404/  
 [MIT License][mit]  

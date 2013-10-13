@@ -1,0 +1,6 @@
+language: objective-c
+
+script:
+  - xctool/xctool.sh -project CocoaSecurity.xcodeproj -scheme CocoaSecurity -sdk iphonesimulator build
+# waiting for xcode 5
+#  - xctool/xctool.sh -project CocoaSecurity.xcodeproj -scheme CocoaSecurity test -test-sdk iphonesimulator6.1
