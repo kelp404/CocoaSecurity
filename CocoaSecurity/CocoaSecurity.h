@@ -33,30 +33,18 @@
 + (CocoaSecurityResult *)aesEncrypt:(NSString *)data hexKey:(NSString *)key hexIv:(NSString *)iv;
 + (CocoaSecurityResult *)aesEncrypt:(NSString *)data key:(NSData *)key iv:(NSData *)iv;
 + (CocoaSecurityResult *)aesEncryptWithData:(NSData *)data key:(NSData *)key iv:(NSData *)iv;
-- (CocoaSecurityResult *)aesEncrypt:(NSString *)data key:(NSString *)key;
-- (CocoaSecurityResult *)aesEncrypt:(NSString *)data hexKey:(NSString *)key hexIv:(NSString *)iv;
-- (CocoaSecurityResult *)aesEncrypt:(NSString *)data key:(NSData *)key iv:(NSData *)iv;
-- (CocoaSecurityResult *)aesEncryptWithData:(NSData *)data key:(NSData *)key iv:(NSData *)iv;
 #pragma mark AES Decrypt
 + (CocoaSecurityResult *)aesDecryptWithBase64:(NSString *)data key:(NSString *)key;
 + (CocoaSecurityResult *)aesDecryptWithBase64:(NSString *)data hexKey:(NSString *)key hexIv:(NSString *)iv;
 + (CocoaSecurityResult *)aesDecryptWithBase64:(NSString *)data key:(NSData *)key iv:(NSData *)iv;
 + (CocoaSecurityResult *)aesDecryptWithData:(NSData *)data key:(NSData *)key iv:(NSData *)iv;
-- (CocoaSecurityResult *)aesDecryptWithBase64:(NSString *)data key:(NSString *)key;
-- (CocoaSecurityResult *)aesDecryptWithBase64:(NSString *)data hexKey:(NSString *)key hexIv:(NSString *)iv;
-- (CocoaSecurityResult *)aesDecryptWithBase64:(NSString *)data key:(NSData *)key iv:(NSData *)iv;
-- (CocoaSecurityResult *)aesDecryptWithData:(NSData *)data key:(NSData *)key iv:(NSData *)iv;
 
 #pragma mark - MD5
 + (CocoaSecurityResult *)md5:(NSString *)hashString;
 + (CocoaSecurityResult *)md5WithData:(NSData *)hashData;
-- (CocoaSecurityResult *)md5:(NSString *)hashString;
-- (CocoaSecurityResult *)md5WithData:(NSData *)hashData;
 #pragma mark HMAC-MD5
 + (CocoaSecurityResult *)hmacMd5:(NSString *)hashString hmacKey:(NSString *)key;
 + (CocoaSecurityResult *)hmacMd5WithData:(NSData *)hashData hmacKey:(NSString *)key;
-- (CocoaSecurityResult *)hmacMd5:(NSString *)hashString hmacKey:(NSString *)key;
-- (CocoaSecurityResult *)hmacMd5WithData:(NSData *)hashData hmacKey:(NSString *)key;
 
 #pragma mark - SHA
 + (CocoaSecurityResult *)sha1:(NSString *)hashString;
@@ -69,16 +57,6 @@
 + (CocoaSecurityResult *)sha384WithData:(NSData *)hashData;
 + (CocoaSecurityResult *)sha512:(NSString *)hashString;
 + (CocoaSecurityResult *)sha512WithData:(NSData *)hashData;
-- (CocoaSecurityResult *)sha1:(NSString *)hashString;
-- (CocoaSecurityResult *)sha1WithData:(NSData *)hashData;
-- (CocoaSecurityResult *)sha224:(NSString *)hashString;
-- (CocoaSecurityResult *)sha224WithData:(NSData *)hashData;
-- (CocoaSecurityResult *)sha256:(NSString *)hashString;
-- (CocoaSecurityResult *)sha256WithData:(NSData *)hashData;
-- (CocoaSecurityResult *)sha384:(NSString *)hashString;
-- (CocoaSecurityResult *)sha384WithData:(NSData *)hashData;
-- (CocoaSecurityResult *)sha512:(NSString *)hashString;
-- (CocoaSecurityResult *)sha512WithData:(NSData *)hashData;
 #pragma mark HMAC-SHA
 + (CocoaSecurityResult *)hmacSha1:(NSString *)hashString hmacKey:(NSString *)key;
 + (CocoaSecurityResult *)hmacSha1WithData:(NSData *)hashData hmacKey:(NSString *)key;
@@ -90,16 +68,6 @@
 + (CocoaSecurityResult *)hmacSha384WithData:(NSData *)hashData hmacKey:(NSString *)key;
 + (CocoaSecurityResult *)hmacSha512:(NSString *)hashString hmacKey:(NSString *)key;
 + (CocoaSecurityResult *)hmacSha512WithData:(NSData *)hashData hmacKey:(NSString *)key;
-- (CocoaSecurityResult *)hmacSha1:(NSString *)hashString hmacKey:(NSString *)key;
-- (CocoaSecurityResult *)hmacSha1WithData:(NSData *)hashData hmacKey:(NSString *)key;
-- (CocoaSecurityResult *)hmacSha224:(NSString *)hashString hmacKey:(NSString *)key;
-- (CocoaSecurityResult *)hmacSha224WithData:(NSData *)hashData hmacKey:(NSString *)key;
-- (CocoaSecurityResult *)hmacSha256:(NSString *)hashString hmacKey:(NSString *)key;
-- (CocoaSecurityResult *)hmacSha256WithData:(NSData *)hashData hmacKey:(NSString *)key;
-- (CocoaSecurityResult *)hmacSha384:(NSString *)hashString hmacKey:(NSString *)key;
-- (CocoaSecurityResult *)hmacSha384WithData:(NSData *)hashData hmacKey:(NSString *)key;
-- (CocoaSecurityResult *)hmacSha512:(NSString *)hashString hmacKey:(NSString *)key;
-- (CocoaSecurityResult *)hmacSha512WithData:(NSData *)hashData hmacKey:(NSString *)key;
 @end
 
 
