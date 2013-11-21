@@ -52,12 +52,12 @@
     }
     
     // setup output buffer
-	size_t bufferSize = [data length] + kCCBlockSizeAES128;
-	void *buffer = malloc(bufferSize);
+    size_t bufferSize = [data length] + kCCBlockSizeAES128;
+    void *buffer = malloc(bufferSize);
     
     // do encrypt
-	size_t encryptedSize = 0;
-	CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt,
+    size_t encryptedSize = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt,
                                           kCCAlgorithmAES128,
                                           kCCOptionPKCS7Padding,
                                           [key bytes],     // Key
@@ -68,7 +68,7 @@
                                           buffer,
                                           bufferSize,
                                           &encryptedSize);
-	if (cryptStatus == kCCSuccess) {
+    if (cryptStatus == kCCSuccess) {
         CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:buffer length:encryptedSize];
         free(buffer);
         
@@ -121,12 +121,12 @@
     }
     
     // setup output buffer
-	size_t bufferSize = [data length] + kCCBlockSizeAES128;
-	void *buffer = malloc(bufferSize);
+    size_t bufferSize = [data length] + kCCBlockSizeAES128;
+    void *buffer = malloc(bufferSize);
     
     // do encrypt
-	size_t encryptedSize = 0;
-	CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt,
+    size_t encryptedSize = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt,
                                           kCCAlgorithmAES128,
                                           kCCOptionPKCS7Padding,
                                           [key bytes],     // Key
@@ -137,7 +137,7 @@
                                           buffer,
                                           bufferSize,
                                           &encryptedSize);
-	if (cryptStatus == kCCSuccess) {
+    if (cryptStatus == kCCSuccess) {
         CocoaSecurityResult *result = [[CocoaSecurityResult alloc] initWithBytes:buffer length:encryptedSize];
         free(buffer);
         
