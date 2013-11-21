@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "21BB8A2C17FEA0EC0032C38C"
-               BuildableName = "CocoaSecurity Tests.xctest"
-               BlueprintName = "CocoaSecurity Tests"
+               BlueprintIdentifier = "215409EB183DD72F00E4C15B"
+               BuildableName = "CocoaSecurityTests.xctest"
+               BlueprintName = "CocoaSecurityTests"
                ReferencedContainer = "container:CocoaSecurity.xcodeproj">
             </BuildableReference>
          </TestableReference>
