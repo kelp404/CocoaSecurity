@@ -530,7 +530,7 @@
     unsigned char *outputBytes = (unsigned char *)[outputData mutableBytes];
     
     int accumulator = 0;
-    long long outputLength = 0;
+    NSInteger outputLength = 0;
     unsigned char accumulated[] = {0, 0, 0, 0};
     for (NSUInteger index = 0; index < inputLength; index++)
     {
