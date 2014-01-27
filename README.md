@@ -96,6 +96,8 @@ NSData *data2 = [decoder base64:@"zT1PS64MnXIUDCUiy13RRg=="];
 1. **git:**
 ```
 $ git clone git://github.com/kelp404/CocoaSecurity.git
+$ cd CocoaSecurity
+$ git submodule update --init
 ```
 
 2. **<a href="http://cocoapods.org/?q=CocoaSecurity" target="_blank">CocoadPods</a>:**  
