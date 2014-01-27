@@ -9,6 +9,7 @@
 #import "CocoaSecurity.h"
 #import <CommonCrypto/CommonHMAC.h>
 #import <CommonCrypto/CommonCryptor.h>
+#import "Base64.h"
 
 #pragma mark - CocoaSecurity
 @implementation CocoaSecurity
@@ -419,51 +420,7 @@
 // convert NSData to Base64
 - (NSString *)base64:(NSData *)data
 {
-    static const char lookup[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-    
-    long long inputLength = [data length];
-    const unsigned char *inputBytes = [data bytes];
-    
-    long long maxOutputLength = (inputLength / 3 + 1) * 4;
-    unsigned char *outputBytes = (unsigned char *)malloc((unsigned long)maxOutputLength);
-    
-    long long index;
-    long long outputLength = 0;
-    for (index = 0; index < inputLength - 2; index += 3)
-    {
-        outputBytes[outputLength++] = lookup[(inputBytes[index] & 0xFC) >> 2];
-        outputBytes[outputLength++] = lookup[((inputBytes[index] & 0x03) << 4) | ((inputBytes[index + 1] & 0xF0) >> 4)];
-        outputBytes[outputLength++] = lookup[((inputBytes[index + 1] & 0x0F) << 2) | ((inputBytes[index + 2] & 0xC0) >> 6)];
-        outputBytes[outputLength++] = lookup[inputBytes[index + 2] & 0x3F];
-    }
-    
-    //handle left-over data
-    if (index == inputLength - 2)
-    {
-        // = terminator
-        outputBytes[outputLength++] = lookup[(inputBytes[index] & 0xFC) >> 2];
-        outputBytes[outputLength++] = lookup[((inputBytes[index] & 0x03) << 4) | ((inputBytes[index + 1] & 0xF0) >> 4)];
-        outputBytes[outputLength++] = lookup[(inputBytes[index + 1] & 0x0F) << 2];
-        outputBytes[outputLength++] = '=';
-    }
-    else if (index == inputLength - 1)
-    {
-        // == terminator
-        outputBytes[outputLength++] = lookup[(inputBytes[index] & 0xFC) >> 2];
-        outputBytes[outputLength++] = lookup[(inputBytes[index] & 0x03) << 4];
-        outputBytes[outputLength++] = '=';
-        outputBytes[outputLength++] = '=';
-    }
-    
-    NSString *result;
-    if (outputLength >= 4)
-    {
-        //truncate data to match actual output length
-        outputBytes = realloc(outputBytes, (unsigned long)outputLength);
-        result = [[NSString alloc] initWithBytes:outputBytes length:(unsigned long)outputLength encoding:NSASCIIStringEncoding];
-    }
-    free(outputBytes);
-    return result;
+    return [data base64EncodedString];
 }
 
 // convert NSData to hex string
@@ -510,52 +467,7 @@
 @implementation CocoaSecurityDecoder
 - (NSData *)base64:(NSString *)string
 {
-    static const char lookup[] =
-    {
-        99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99,
-        99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99,
-        99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 62, 99, 99, 99, 63,
-        52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 99, 99, 99, 99, 99, 99,
-        99,  0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14,
-        15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 99, 99, 99, 99, 99,
-        99, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
-        41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 99, 99, 99, 99, 99
-    };
-    
-    NSData *inputData = [string dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSUInteger inputLength = [inputData length];
-    const unsigned char *inputBytes = [inputData bytes];
-    
-    NSMutableData *outputData = [NSMutableData dataWithLength:(inputLength / 4 + 1) * 3];
-    unsigned char *outputBytes = (unsigned char *)[outputData mutableBytes];
-    
-    int accumulator = 0;
-    long long outputLength = 0;
-    unsigned char accumulated[] = {0, 0, 0, 0};
-    for (NSUInteger index = 0; index < inputLength; index++)
-    {
-        unsigned char decoded = lookup[inputBytes[index] & 0x7F];
-        if (decoded != 99)
-        {
-            accumulated[accumulator] = decoded;
-            if (accumulator == 3)
-            {
-                outputBytes[outputLength++] = (accumulated[0] << 2) | (accumulated[1] >> 4);
-                outputBytes[outputLength++] = (accumulated[1] << 4) | (accumulated[2] >> 2);
-                outputBytes[outputLength++] = (accumulated[2] << 6) | accumulated[3];
-            }
-            accumulator = (accumulator + 1) % 4;
-        }
-    }
-    
-    //handle left-over data
-    if (accumulator > 0) outputBytes[outputLength] = (accumulated[0] << 2) | (accumulated[1] >> 4);
-    if (accumulator > 1) outputBytes[++outputLength] = (accumulated[1] << 4) | (accumulated[2] >> 2);
-    if (accumulator > 2) outputLength++;
-    
-    //truncate data to match actual output length
-    outputData.length = outputLength;
-    return outputLength? outputData: nil;
+    return [NSData dataWithBase64EncodedString:string];
 }
 - (NSData *)hex:(NSString *)data
 {
