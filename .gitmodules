@@ -1,7 +1,4 @@
-[submodule "xctool"]
-	path = xctool
-	url = https://github.com/facebook/xctool.git
-	ignore = dirty
 [submodule "submodules/Base64"]
 	path = submodules/Base64
 	url = https://github.com/nicklockwood/Base64.git
+	ignore = dirty
