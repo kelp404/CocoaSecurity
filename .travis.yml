@@ -3,3 +3,4 @@ language: objective-c
 script:
   - submodules/xctool/xctool.sh -project CocoaSecurity.xcodeproj -scheme CocoaSecurity -sdk iphonesimulator build
   - submodules/xctool/xctool.sh -project CocoaSecurity.xcodeproj -scheme CocoaSecurity -sdk iphonesimulator test -test-sdk iphonesimulator7.0
+  - submodules/xctool/xctool.sh -project CocoaSecurity.xcodeproj -scheme CocoaSecurity -sdk iphonesimulator test -test-sdk iphonesimulator7.1
