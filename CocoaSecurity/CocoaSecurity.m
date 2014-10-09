@@ -9,7 +9,6 @@
 #import "CocoaSecurity.h"
 #import <CommonCrypto/CommonHMAC.h>
 #import <CommonCrypto/CommonCryptor.h>
-#import "Base64.h"
 
 #pragma mark - CocoaSecurity
 @implementation CocoaSecurity
@@ -420,7 +419,11 @@
 // convert NSData to Base64
 - (NSString *)base64:(NSData *)data
 {
-    return [data base64EncodedString];
+    NSString *string = [data base64EncodedStringWithOptions:0];
+    if (string.length == 0) {
+        return nil;
+    }
+    return string;
 }
 
 // convert NSData to hex string
@@ -464,11 +467,17 @@
 @end
 
 #pragma mark - CocoaSecurityDecoder
+
 @implementation CocoaSecurityDecoder
+
 - (NSData *)base64:(NSString *)string
 {
-    return [NSData dataWithBase64EncodedString:string];
+    if (string.length == 0) {
+        return nil;
+    }
+    return [[NSData alloc] initWithBase64EncodedString:string options:0];
 }
+
 - (NSData *)hex:(NSString *)data
 {
     if (data.length == 0) { return nil; }
