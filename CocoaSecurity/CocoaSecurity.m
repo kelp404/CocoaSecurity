@@ -9,7 +9,6 @@
 #import "CocoaSecurity.h"
 #import <CommonCrypto/CommonHMAC.h>
 #import <CommonCrypto/CommonCryptor.h>
-#import "Base64.h"
 
 #pragma mark - CocoaSecurity
 @implementation CocoaSecurity
@@ -420,7 +419,17 @@
 // convert NSData to Base64
 - (NSString *)base64:(NSData *)data
 {
-    return [data base64EncodedString];
+    NSString *base64String;
+#if ((defined __MAC_OS_X_VERSION_MIN_REQUIRED && __MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_9) || \
+(defined __IPHONE_OS_VERSION_MIN_REQUIRED && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0)) 
+    base64String = [data base64EncodedStringWithOptions:0];
+#else
+    if ([data respondsToSelector:@selector(base64EncodedStringWithOptions:)]) {
+        base64String = [data base64EncodedStringWithOptions:0];
+    }
+    base64String = [data base64Encoding];
+#endif
+    return [base64String length] == 0 ? nil : base64String;
 }
 
 // convert NSData to hex string
@@ -467,8 +476,20 @@
 @implementation CocoaSecurityDecoder
 - (NSData *)base64:(NSString *)string
 {
-    return [NSData dataWithBase64EncodedString:string];
+    if ([string length] == 0) {
+        return nil;
+    }
+#if ((defined __MAC_OS_X_VERSION_MIN_REQUIRED && __MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_9) || \
+(defined __IPHONE_OS_VERSION_MIN_REQUIRED && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0))
+    return [[NSData alloc] initWithBase64EncodedString:string options:0];
+#else
+    if ([NSData instancesRespondToSelector:@selector(initWithBase64EncodedString:options:)]) {
+        return [[NSData alloc] initWithBase64EncodedString:string options:0];
+    }
+    return [[NSData alloc] initWithBase64Encoding:string];
+#endif
 }
+
 - (NSData *)hex:(NSString *)data
 {
     if (data.length == 0) { return nil; }
