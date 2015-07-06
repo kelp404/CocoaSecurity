@@ -48,7 +48,7 @@
     }
     if ([key length] != 16 && [key length] != 24 && [key length] != 32 ) {
         @throw [NSException exceptionWithName:@"Cocoa Security"
-                                       reason:@"Length of key is wrong. Length of iv should be 16, 24 or 32(128, 192 or 256bits)"
+                                       reason:@"Length of key is wrong. Length of key should be 16, 24 or 32(128, 192 or 256bits)"
                                      userInfo:nil];
     }
     
@@ -117,7 +117,7 @@
     }
     if ([key length] != 16 && [key length] != 24 && [key length] != 32 ) {
         @throw [NSException exceptionWithName:@"Cocoa Security"
-                                       reason:@"Length of key is wrong. Length of iv should be 16, 24 or 32(128, 192 or 256bits)"
+                                       reason:@"Length of key is wrong. Length of key should be 16, 24 or 32(128, 192 or 256bits)"
                                      userInfo:nil];
     }
     
